@@ -17,12 +17,18 @@ dis_height = 600
 dis = pygame.display.set_mode((dis_width, dis_height))
 pygame.display.set_caption('Big python')
 
+# Музыка
+pygame.mixer.music.load('8bit_music.mp3')
+pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0.1)
+
+
 clock = pygame.time.Clock()
 
 snake_block = 10
 snake_speed = 15
 
-font_style = pygame.font.SysFont('Arial', 35)
+font_style = pygame.font.SysFont('Arial', 25)
 score_font = pygame.font.SysFont('Arial', 35)
 
 
@@ -40,6 +46,7 @@ def our_snake(snake_block, snake_list):
 def gameloop():
     game_over = False
     game_close = False
+    pygame.mixer.init()
 
     x1 = dis_width / 2
     y1 = dis_height / 2
